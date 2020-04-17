@@ -2,16 +2,11 @@
 
 class Hmenu {
 
-  
-  
-  
+
   Hmenu() {
-  
-
-
   }
 
-
-
-
+  void display() {
+    
+  }
 }
