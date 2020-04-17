@@ -9,14 +9,18 @@
 // Sprint 6: Segmenterne programmeres
 // Sprint 7: Finjustering og kommentering af kode
 
+Startscreen s;
+
+
 void setup(){
   fullScreen();
- 
+ s = new Startscreen();
   
 }
 
 void draw(){
   background(255);
+  s.display();
   
   
 }
