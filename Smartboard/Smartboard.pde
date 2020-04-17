@@ -8,7 +8,7 @@
 // Sprint 5: Oprettelse af segmenter
 // Sprint 6: Segmenterne programmeres
 // Sprint 7: Finjustering og kommentering af kode
-int state = 1;
+int state = 0;
 Startscreen s;
 Hmenu hm;
 
