@@ -12,10 +12,12 @@ class Startscreen {
     textFont(font);
     textMode(CENTER);
     textAlign(CENTER);
+    ellipseMode(CENTER);
   }
   // Her skrives alle funktionerne
 
   void display() {
+    rectMode(CORNER);
     fill(200);
     rect(0, 10, 2300, 200);  
     fill(240);
@@ -29,5 +31,11 @@ class Startscreen {
     fill(30);
     textSize(40);
     text("TRYK HER", width/2, 560);
+  }
+  void update(){
+    if(dist(mouseX,mouseY,width/2,550) < 350/2  && mousePressed){
+      state = 1;
+    }
+   
   }
 }
