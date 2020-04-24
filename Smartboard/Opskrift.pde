@@ -7,8 +7,8 @@ class Opskrift {
   PImage billede;
   String[] ingredienser;
   String[] redskaber;
-  int difficulty;
-  int tidsbrug;
+  int diff;
+  int tid;
 
   Opskrift(/*String tempTitel, String tempBillede, String[] tempIngredienser, String[] tempRedskaber, int tempDifficulty, int tempTidsbrug*/) {
 /*    titel = tempTitel;
