@@ -5,7 +5,7 @@
 class Opskrift {
   String titel;
   PImage billede;
-  String[] ingredienser;
+  String[] ing;
   String[] redskaber;
   int diff;
   int tid;
