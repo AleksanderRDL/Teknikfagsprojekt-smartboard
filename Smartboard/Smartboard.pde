@@ -20,7 +20,7 @@ void setup() {
 
 void draw() {
   if (state == 0) {  // Startskærm
-    background(255);
+    background(195);
     s.display();
     s.update();
   } else if (state == 1) { // Hovedmenu

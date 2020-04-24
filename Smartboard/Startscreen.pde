@@ -18,17 +18,17 @@ class Startscreen {
 
   void display() {
     rectMode(CORNER);
-    fill(200);
-    rect(0, 10, 2300, 200);  
-    fill(240);
+    fill(80);
+    rect(0, 10, 2300, 170);  
+    fill(255);
     ellipse(width/2, 550, 350, 350);
     noStroke();
 
     textSize(60);
     fill(255);
-    text("START MADLAVNING", width/2, 130);
+    text("START MADLAVNING", width/2, 115);
 
-    fill(30);
+    fill(0);
     textSize(40);
     text("TRYK HER", width/2, 560);
   }
