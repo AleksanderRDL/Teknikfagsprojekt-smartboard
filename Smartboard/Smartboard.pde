@@ -24,7 +24,7 @@ void draw() {
     s.display();
     s.update();
   } else if (state == 1) { // Hovedmenu
-    background(150);
+    background(195);
     hm.display();  
     println("Check");
   } else if (state == 2){   // Opskrifter
