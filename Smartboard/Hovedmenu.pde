@@ -9,17 +9,26 @@ class Hmenu {
     textSize(75);
     fill(255);
 
-    rect((width/4)-(height/7), height/1.8, width/3.3, height/1.3);   // Første opskrift
-    rect((width/4)*2, height/1.8, width/3.3, height/1.3);               // Anden
-    rect((width/4)*3+(height/7), height/1.8, width/3.3, height/1.3);    // Tredje
+    rect((width/4)-140, height/1.8, width/3.4, height/1.3);   // Første opskrift
+    rect((width/4)*2, height/1.8, width/3.4, height/1.3);               // Anden
+    rect((width/4)*3+140, height/1.8, width/3.4, height/1.3);    // Tredje
 
     fill(60);
     rect(width/2, 60, width, 120, 20);            // Banner
-    rect((width/4)-(height/7), 225, width/3.3, 90);   // Første opskrift titelkasse
-    rect((width/4)*2, 225, width/3.3, 90);            // Anden opskrift titelkasse
-    rect((width/4)*3+(height/7), 225, width/3.3,90);  // Tredje opskrift titelkasse
-    
+    rect((width/4)-140, 225, width/3.4, 90);   // Første opskrift titelkasse
+    rect((width/4)*2, 225, width/3.4, 90);            // Anden opskrift titelkasse
+    rect((width/4)*3+140, 225, width/3.4, 90);  // Tredje opskrift titelkasse
+
+    rect((width/4)-140, 940, width/9, 75, 20);      // Først startknap
+    rect((width/4)*2, 940, width/9, 75, 20);      // Anden startknap
+    rect((width/4)*3+140, 940, width/9, 75, 20);      // Tredje startknap
+
     fill(255);
-    text("VÆLG OPSKRIFT",width/2,85);
+    text("VÆLG OPSKRIFT", width/2, 85);
+    
+    textSize(40);
+    text("START", (width/4)-140, 950);
+    text("START", (width/4)*2, 950);
+    text("START", (width/4)*3+140, 950);
   }
 }
