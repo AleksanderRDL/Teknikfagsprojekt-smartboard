@@ -11,11 +11,12 @@
 int state = 0;
 Startscreen s;
 Hmenu hm;
-
+Omelet o;
 void setup() {
   fullScreen();
   s = new Startscreen();
   hm = new Hmenu();
+  o = new Omelet();
 }
 
 void draw() {
