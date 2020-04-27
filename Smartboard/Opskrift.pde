@@ -8,7 +8,7 @@ class Opskrift {
   String[] ing;
   String[] redskaber;
   int diff;
-  int tid;
+  String tid;
 
   Opskrift(/*String tempTitel, String tempBillede, String[] tempIngredienser, String[] tempRedskaber, int tempDifficulty, int tempTidsbrug*/) {
 /*    titel = tempTitel;
