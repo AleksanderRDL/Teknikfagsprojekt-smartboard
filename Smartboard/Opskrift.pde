@@ -7,7 +7,7 @@ class Opskrift {
   PImage billede;
   String[] ing;
   String[] redskaber;
-  int diff;
+  String diff;
   String tid;
 
   Opskrift(/*String tempTitel, String tempBillede, String[] tempIngredienser, String[] tempRedskaber, int tempDifficulty, int tempTidsbrug*/) {
@@ -20,6 +20,9 @@ class Opskrift {
     */
   }
   
-  
+//  String getTitel(){
+    
+//    return titel;
+//  }
   
 }

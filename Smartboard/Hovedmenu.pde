@@ -2,6 +2,7 @@
 class Hmenu {
 
   Hmenu() {
+    imageMode(CENTER);
   }
 
   void display() {
@@ -25,7 +26,15 @@ class Hmenu {
 
     fill(255);
     text("VÆLG OPSKRIFT", width/2, 85);
+    textSize(40);
+    text(ops.get(0).titel, (width/4)-140, 240);
+    text(ops.get(1).titel, (width/4)*2, 240);
+    text(ops.get(2).titel, (width/4)*3+140, 240);
     
+    image(ops.get(0).billede,(width/4)-140, 445);
+    image(ops.get(1).billede,(width/4)*2, 445);
+    image(ops.get(2).billede,(width/4)*3+140, 445);
+
     textSize(40);
     text("START", (width/4)-140, 950);
     text("START", (width/4)*2, 950);

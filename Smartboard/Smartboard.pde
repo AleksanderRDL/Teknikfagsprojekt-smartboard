@@ -8,15 +8,21 @@
 // Sprint 5: Oprettelse af segmenter
 // Sprint 6: Segmenterne programmeres
 // Sprint 7: Finjustering og kommentering af kode
+
+ArrayList<Opskrift> ops = new ArrayList<Opskrift>();
 int state = 0;
 Startscreen s;
 Hmenu hm;
 Opskrift2 o2;
 void setup() {
   fullScreen();
+  ops.add(new Opskrift1());
+  ops.add(new Opskrift2());
+  ops.add(new Opskrift3());
   s = new Startscreen();
   hm = new Hmenu();
   o2 = new Opskrift2();
+  println(ops.get(0).titel);
 }
 
 void draw() {
@@ -27,8 +33,8 @@ void draw() {
   } else if (state == 1) { // Hovedmenu
     background(195);
     hm.display();  
-    println("Check");
-  } else if (state == 2){   // Opskrifter
+ //   println("Check");
+  } else if (state == 2) {   // Opskrifter
     //
   }
 }
