@@ -19,6 +19,9 @@ void setup() {
   ops.add(new Opskrift1());
   ops.add(new Opskrift2());
   ops.add(new Opskrift3());
+  ops.add(new Opskrift4());
+  ops.add(new Opskrift5());
+
   s = new Startscreen();
   hm = new Hmenu();
   o2 = new Opskrift2();
@@ -33,7 +36,7 @@ void draw() {
   } else if (state == 1) { // Hovedmenu
     background(195);
     hm.display();  
- //   println("Check");
+    //   println("Check");
   } else if (state == 2) {   // Opskrifter
     //
   }
