@@ -34,10 +34,37 @@ class Hmenu {
     image(ops.get(0).billede,(width/4)-140, 445);
     image(ops.get(1).billede,(width/4)*2, 445);
     image(ops.get(2).billede,(width/4)*3+140, 445);
+    
+    
+    
+    
 
     textSize(40);
+    fill(255);
     text("START", (width/4)-140, 950);
     text("START", (width/4)*2, 950);
     text("START", (width/4)*3+140, 950);
+    
+    // Ingredienser
+    fill(0);
+    textSize(32);
+    text("Ingredienser",(width/4)-140,800);
+    fill(150);
+    ellipse((width/4)-33,780,15,15);
+    fill(255);
+    ellipse((width/4)-33,777,2.5,2.5);
+    rect((width/4)-33,783,2.5,5);
+    
+    // Redskaber
+    fill(0);
+    textSize(32);
+    text("Redskaber",(width/4)-140,800);
+    fill(150);
+    ellipse((width/4)-33,780,15,15);
+    fill(255);
+    ellipse((width/4)-33,777,2.5,2.5);
+    rect((width/4)-33,783,2.5,5);
+    
+    
   }
 }
