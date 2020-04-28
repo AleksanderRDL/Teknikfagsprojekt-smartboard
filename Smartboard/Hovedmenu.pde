@@ -39,6 +39,16 @@ class Hmenu {
     
     
 
+    fill(0);
+    textSize(32);
+    text("Tid:  " + ops.get(0).tid,(width/4)-140, 700);
+    text("Sværhedsgrad:  " + ops.get(0).diff,(width/4)-140, 750);
+    text("Tid:  " + ops.get(1).tid,(width/4)*2, 700);
+    text("Sværhedsgrad:  " + ops.get(1).diff,(width/4)*2, 750);
+    text("Tid:  " + ops.get(2).tid,(width/4)*3+140, 700);
+    text("Sværhedsgrad:  " + ops.get(1).diff,(width/4)*3+140, 750);
+
+    fill(255);
     textSize(40);
     fill(255);
     text("START", (width/4)-140, 950);
