@@ -34,6 +34,7 @@ class Hmenu {
     image(ops.get(0).billede, (width/4)-140, 445);
     image(ops.get(1).billede, (width/4)*2, 445);
     image(ops.get(2).billede, (width/4)*3+140, 445);
+    image(ops.get(3).billede, (width/4)*3+140, 445);
 
 
 
