@@ -9,13 +9,20 @@
 // Sprint 6: Segmenterne programmeres
 // Sprint 7: Finjustering og kommentering af kode
 
+import processing.serial.*;
 ArrayList<Opskrift> ops = new ArrayList<Opskrift>();
 int state = 0;
 Startscreen s;
 Hmenu hm;
 Opskrift2 o2;
+
+Serial myPort;
+String val;
+
 void setup() {
   fullScreen();
+  String portName = Serial.list()[0];
+  myPort = new Serial(this, portName, 115200);
   ops.add(new Opskrift1());
   ops.add(new Opskrift2());
   ops.add(new Opskrift3());
@@ -29,6 +36,9 @@ void setup() {
 }
 
 void draw() {
+  if (myPort.available()>0) {
+    val=myPort.readStringUntil('\n');
+  }
   if (state == 0) {  // Startskærm
     background(195);
     s.display();
