@@ -2,10 +2,10 @@
 
 class Opskrift2 extends Opskrift {
   float cooldown = 0;
-PFont font;
+  PFont font;
 
   Opskrift2() {
-    font = createFont("Ink Free",30);
+    font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
     ing = new String [] {"5 Æg", "1 løg", "1 gulerod", "6 små Tomater", "1 håndfuld bredblader Persille", "Smør eller Kokosolie", "salt og peber"};
@@ -36,39 +36,27 @@ PFont font;
       fill(255);
       text("FIND INGREDIENSER", width/2, 150);
       text("Segment:"+segStep, 1800, 40);
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
     } else if (segStep == 1) {
       text("Segment:"+segStep, 1800, 40);
-      text("HEY", width/2, 500);
+      noFill();
+      stroke(0);
+      strokeWeight(4);
+      for(float i = 0; i < 6.25; i += 0.25){
+      arc(width/2, height/2, 500, 500, i, i+0.1); 
+        }
     } else if (segStep == 2) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 3) {
       text("Segment:"+segStep, 1800, 40);
