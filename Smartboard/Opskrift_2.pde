@@ -57,6 +57,18 @@ PFont font;
       text("Segment:"+segStep, 1800, 40);
       text("HEY", width/2, 500);
     } else if (segStep == 2) {
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 3) {
       text("Segment:"+segStep, 1800, 40);
