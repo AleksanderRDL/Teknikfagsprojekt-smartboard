@@ -47,7 +47,7 @@ void draw() {
     hm.display();  
     //   println("Check");
   } else if (state == 2) {   // Opskrifter
-    background(0);
+    background(#E0903F);
     o2.segmenter();
   }
   // Arduino
