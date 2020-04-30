@@ -28,7 +28,9 @@ class Hmenu {
     rect((width/4)*3+140, 940, width/9, 75, 20);      // Tredje startknap
 
     fill(255);
-    text("VÆLG OPSKRIFT", width/2, 85);
+    textFont(titel);
+    text("VÆLG OPSKRIFT", width/2, 80);
+    textFont(font);
     textSize(40);
     text(ops.get(n).titel, (width/4)-140, 240);
     text(ops.get(n+1).titel, (width/4)*2, 240);

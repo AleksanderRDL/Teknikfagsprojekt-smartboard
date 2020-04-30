@@ -4,12 +4,10 @@
 class Startscreen {
   // Dette er området over setup hvor man kan lave de globale variabler der gælder for alle funktionerne under
 
-  PFont font;
+  
 
   Startscreen() {
     // Det her fungerer som setup den køres 1 gang
-    font = createFont("Arial Bold", 30);
-    textFont(font);
     textMode(CENTER);
     textAlign(CENTER);
     ellipseMode(CENTER);
@@ -26,10 +24,12 @@ class Startscreen {
 
     textSize(60);
     fill(255);
+    textFont(titel);
     text("START MADLAVNING", width/2, 115);
 
     fill(0);
     textSize(40);
+    textFont(font);
     text("TRYK HER", width/2, 560);
   }
   void update(){

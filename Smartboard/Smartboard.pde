@@ -17,12 +17,17 @@ Startscreen s;
 Hmenu hm;
 Opskrift2 o2;
 int segStep = 0;
+PFont font;
+PFont titel;
 
 Serial myPort;
 String val;
 
 void setup() {
   fullScreen();
+  font = createFont("Ink Free", 30);
+  titel = createFont("Book Antiqua", 60);
+
   String portName = Serial.list()[0];
   // myPort = new Serial(this, portName, 115200);
   ops.add(new Opskrift1());
