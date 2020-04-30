@@ -222,8 +222,14 @@ class Hmenu {
       if (n < 0) {
         n = 0;
       }
-    }
-  }
+    } else if (dist(mouseX, 0, (width/4)*2, 0) < (width/9)/2 && dist(0, mouseY, 0, 940) < 75/2 && n == 0 && mousePressed) { // Anden startknap
+      state = 2;
+    } else if (dist(mouseX, 0, (width/4)-140, 0) < (width/9)/2 && dist(0, mouseY, 0, 940) < 75/2 && n == 1 && mousePressed) { // Første
+      state = 2;
+    }/*else if (dist(mouseX, 0, (width/4)*3+140, 0) < (width/9)/2 && dist(0, mouseY, 0, 940) < 75/2 && n == 0) { // Tredje
+     state = 2;
+     } */
+  }  
 
   boolean checkHover(float x, float y, float r) {
     if (dist(mouseX, mouseY, x, y) < r) {

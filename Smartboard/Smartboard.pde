@@ -10,11 +10,13 @@
 // Sprint 7: Finjustering og kommentering af kode
 
 import processing.serial.*;
+
 ArrayList<Opskrift> ops = new ArrayList<Opskrift>();
 int state = 0;
 Startscreen s;
 Hmenu hm;
 Opskrift2 o2;
+int segStep = 0;
 
 Serial myPort;
 String val;
@@ -22,23 +24,20 @@ String val;
 void setup() {
   fullScreen();
   String portName = Serial.list()[0];
-  myPort = new Serial(this, portName, 115200);
+  // myPort = new Serial(this, portName, 115200);
   ops.add(new Opskrift1());
   ops.add(new Opskrift2());
   ops.add(new Opskrift3());
   ops.add(new Opskrift4());
   ops.add(new Opskrift5());
+  o2 = new Opskrift2();
 
   s = new Startscreen();
   hm = new Hmenu();
-  o2 = new Opskrift2();
   println(ops.get(0).titel);
 }
 
 void draw() {
-  if (myPort.available()>0) {
-    val=myPort.readStringUntil('\n');
-  }
   if (state == 0) {  // Startskærm
     background(195);
     s.display();
@@ -48,8 +47,11 @@ void draw() {
     hm.display();  
     //   println("Check");
   } else if (state == 2) {   // Opskrifter
-    //
+    background(0);
+    o2.segmenter();
   }
+  // Arduino
+  /* if (myPort.available()>0) {
+   val=myPort.readStringUntil('\n');
+   } */
 }
-
-// Arduino
