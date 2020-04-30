@@ -32,7 +32,7 @@ void setup() {
   titel = createFont("Ink Free", 65);
   //val=("199 200");
 
-  //String portName = Serial.list()[0];
+  // String portName = Serial.list()[0];
   // myPort = new Serial(this, portName, 115200);
   ops.add(new Opskrift1());
   ops.add(new Opskrift2());
