@@ -37,6 +37,8 @@ PImage wash;
 
     if (segStep == 0) {
       fill(255);
+      text("FIND INGREDIENSER", width/2, 150);
+      text("Segment:"+segStep, 1800, 40);
       stroke(0);
       rect(width/2,600,700,850);
       
@@ -64,30 +66,28 @@ PImage wash;
       //image(wash,200,820);
       
       
-      
-      
-      
-      
-      
-      
-      
-      
+     
     } else if (segStep == 1) {
       text("Segment:"+segStep, 1800, 40);
-      text("HEY", width/2, 500);
+      noFill();
+      stroke(0);
+      strokeWeight(4);
+      for(float i = 0; i < 6.25; i += 0.25){
+      arc(width/2, height/2, 500, 500, i, i+0.1); 
+        }
     } else if (segStep == 2) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 3) {
       text("Segment:"+segStep, 1800, 40);
