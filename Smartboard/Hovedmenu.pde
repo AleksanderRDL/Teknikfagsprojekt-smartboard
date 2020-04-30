@@ -60,20 +60,20 @@ class Hmenu {
     textSize(32);
     text("Ingredienser", 100, 800);
     fill(150);
-    ellipse(300, 780, 15, 15);
+    ellipse(282, 780, 15, 15);
     fill(255);
-    ellipse(300, 777, 2.5, 2.5);
-    rect(300, 783, 2.5, 5);
+    ellipse(282, 777, 2.5, 2.5);
+    rect(282, 783, 2.5, 5);
 
     // Redskaber 1 boks
     fill(0);
     textSize(32);
     text("Redskaber", 100, 850);
     fill(150);
-    ellipse(270, 830, 15, 15);
+    ellipse(252, 830, 15, 15);
     fill(255);
-    ellipse(270, 827, 2.5, 2.5);
-    rect(270, 833, 2.5, 5);
+    ellipse(252, 827, 2.5, 2.5);
+    rect(252, 833, 2.5, 5);
 
 
     // Ingredienser 2 boks
@@ -81,10 +81,10 @@ class Hmenu {
     textSize(32);
     text("Ingredienser", 720, 800);
     fill(150);
-    ellipse(920, 780, 15, 15);
+    ellipse(902, 780, 15, 15);
     fill(255);
-    ellipse(920, 777, 2.5, 2.5);
-    rect(920, 783, 2.5, 5);
+    ellipse(902, 777, 2.5, 2.5);
+    rect(902, 783, 2.5, 5);
 
 
     // Redskaber 2 boks
@@ -92,10 +92,10 @@ class Hmenu {
     textSize(32);
     text("Redskaber", 720, 850);
     fill(150);
-    ellipse(890, 830, 15, 15);
+    ellipse(872, 830, 15, 15);
     fill(255);
-    ellipse(890, 827, 2.5, 2.5);
-    rect(890, 833, 2.5, 5);
+    ellipse(872, 827, 2.5, 2.5);
+    rect(872, 833, 2.5, 5);
 
 
     // Ingredienser 3 boks
@@ -103,10 +103,10 @@ class Hmenu {
     textSize(32);
     text("Ingredienser", 1340, 800);
     fill(150);
-    ellipse(1540, 780, 15, 15);
+    ellipse(1522, 780, 15, 15);
     fill(255);
-    ellipse(1540, 777, 2.5, 2.5);
-    rect(1540, 783, 2.5, 5);
+    ellipse(1522, 777, 2.5, 2.5);
+    rect(1522, 783, 2.5, 5);
 
 
 
@@ -115,10 +115,10 @@ class Hmenu {
     textSize(32);
     text("Redskaber", 1340, 850);
     fill(150);
-    ellipse(1510, 830, 15, 15);
+    ellipse(1492, 830, 15, 15);
     fill(255);
-    ellipse(1510, 827, 2.5, 2.5);
-    rect(1510, 833, 2.5, 5);
+    ellipse(1492, 827, 2.5, 2.5);
+    rect(1492, 833, 2.5, 5);
 
 
 
@@ -140,7 +140,7 @@ class Hmenu {
     triangle(15, height/2, 25, height/2-15, 25, height/2+15);
     fill(255);
 
-    if (checkHover(300, 780, 7.5)) {
+    if (checkHover(282, 780, 7.5)) {
       textAlign(CENTER);
       stroke(0);
       rectMode(CORNER);
@@ -152,7 +152,7 @@ class Hmenu {
       }
       noStroke();
       rectMode(CENTER);
-    } else if (checkHover(270, 830, 7.5)) {
+    } else if (checkHover(252, 830, 7.5)) {
       textAlign(CENTER);
       stroke(0);
       rectMode(CORNER);
@@ -164,7 +164,7 @@ class Hmenu {
       }
       noStroke();
       rectMode(CENTER);
-    } else if (checkHover(920, 780, 7.5)) {
+    } else if (checkHover(902, 780, 7.5)) {
       textAlign(CENTER);
       stroke(0);
       rectMode(CORNER);
@@ -176,7 +176,7 @@ class Hmenu {
       }
       noStroke();
       rectMode(CENTER);
-    } else if (checkHover(890, 830, 7.5)) {
+    } else if (checkHover(872, 830, 7.5)) {
       textAlign(CENTER);
       stroke(0);
       rectMode(CORNER);
@@ -188,7 +188,7 @@ class Hmenu {
       }
       noStroke();
       rectMode(CENTER);
-    } else if (checkHover(1540, 780, 7.5)) {
+    } else if (checkHover(1522, 780, 7.5)) {
       textAlign(CENTER);
       stroke(0);
       rectMode(CORNER);
@@ -200,7 +200,7 @@ class Hmenu {
       }
       noStroke();
       rectMode(CENTER);
-    } else if (checkHover(1510, 830, 7.5)) {
+    } else if (checkHover(1492, 830, 7.5)) {
       textAlign(CENTER);
       stroke(0);
       rectMode(CORNER);

@@ -25,8 +25,8 @@ String val;
 
 void setup() {
   fullScreen();
-  font = createFont("Ink Free", 30);
-  titel = createFont("Book Antiqua", 60);
+  font = createFont("Ink Free", 35);
+  titel = createFont("Ink Free", 65);
 
   String portName = Serial.list()[0];
   // myPort = new Serial(this, portName, 115200);
