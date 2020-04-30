@@ -22,11 +22,15 @@ PFont titel;
 
 Serial myPort;
 String val;
+String hojre;
+String venstre;
+String [] mol;
 
 void setup() {
   fullScreen();
   font = createFont("Ink Free", 35);
   titel = createFont("Ink Free", 65);
+  //val=("199 200");
 
   // String portName = Serial.list()[0];
   // myPort = new Serial(this, portName, 115200);
@@ -43,6 +47,14 @@ void setup() {
 }
 
 void draw() {
+  //Arduino code
+  // Arduino
+  /* if (myPort.available()>0) {
+   val=myPort.readStringUntil('\n');
+   } */
+  /*mol = splitTokens(val);
+   hojre = mol[1];
+   venstre = mol[0];*/
   if (state == 0) {  // Startskærm
     background(195);
     s.display();
@@ -55,8 +67,4 @@ void draw() {
     background(#E0903F);
     o2.segmenter();
   }
-  // Arduino
-  /* if (myPort.available()>0) {
-   val=myPort.readStringUntil('\n');
-   } */
 }
