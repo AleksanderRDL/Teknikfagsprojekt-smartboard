@@ -4,7 +4,7 @@
 class Startscreen {
   // Dette er området over setup hvor man kan lave de globale variabler der gælder for alle funktionerne under
 
-  
+
 
   Startscreen() {
     // Det her fungerer som setup den køres 1 gang
@@ -15,12 +15,12 @@ class Startscreen {
   // Her skrives alle funktionerne
 
   void display() {
+    noStroke();
     rectMode(CORNER);
     fill(80);
     rect(0, 10, 2300, 170);  
     fill(255);
     ellipse(width/2, 550, 350, 350);
-    noStroke();
 
     textSize(60);
     fill(255);
@@ -28,14 +28,12 @@ class Startscreen {
     text("START MADLAVNING", width/2, 115);
 
     fill(0);
-    textSize(40);
-    textFont(font);
+    textSize(50);
     text("TRYK HER", width/2, 560);
   }
-  void update(){
-    if(dist(mouseX,mouseY,width/2,550) < 350/2  && mousePressed){
+  void update() {
+    if (dist(mouseX, mouseY, width/2, 550) < 350/2  && mousePressed) {
       state = 1;
     }
-   
   }
 }

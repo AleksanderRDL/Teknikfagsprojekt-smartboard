@@ -36,6 +36,23 @@ PFont font;
       fill(255);
       text("FIND INGREDIENSER", width/2, 150);
       text("Segment:"+segStep, 1800, 40);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     } else if (segStep == 1) {
       text("Segment:"+segStep, 1800, 40);
       text("HEY", width/2, 500);
