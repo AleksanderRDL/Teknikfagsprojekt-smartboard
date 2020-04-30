@@ -3,8 +3,11 @@
 class Opskrift2 extends Opskrift {
   float cooldown = 0;
 PFont font;
+PImage billede2;
 
   Opskrift2() {
+    billede2 = loadImage("Sprites/talebobbel.png");
+    billede2.resize(300,400);
     font = createFont("Ink Free",30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
@@ -34,10 +37,15 @@ PFont font;
 
     if (segStep == 0) {
       fill(255);
-      text("FIND INGREDIENSER", width/2, 150);
+      text("Find nedenstående frem!", width/2, 150);
       text("Segment:"+segStep, 1800, 40);
+    
+      fill(255);
+      rect(width/2,600,700,850);
       
-      
+      fill(0);
+      text("Ingredienser:",760,240);
+      text("Redskaber:",740,650);
       
       
       
