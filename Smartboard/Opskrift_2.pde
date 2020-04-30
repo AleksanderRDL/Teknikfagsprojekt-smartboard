@@ -3,14 +3,14 @@
 class Opskrift2 extends Opskrift {
   float cooldown = 0;
   PFont font;
-  PImage billede2;
   PImage carrot;
   PImage peelcarrot;
+PImage wash;
 
   Opskrift2() {
-    billede2 = loadImage("Sprites/talebobbel.png");
-    billede2.resize(300, 400);
-    font = createFont("Ink Free", 30);
+    wash = loadImage("Sprites/washhands.JPG");
+    wash.resize(300,400);
+    font = createFont("Ink Free",30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
     ing = new String [] {"5 æg", "1 løg", "1 gulerod", "6 små tomater", "1 håndfuld persille", "smør eller kokosolie", "salt og peber"};
@@ -41,12 +41,14 @@ class Opskrift2 extends Opskrift {
 
     if (segStep == 0) {
       fill(255);
+      text("FIND INGREDIENSER", width/2, 150);
+      text("Segment:"+segStep, 1800, 40);
       stroke(0);
       rect(width/2, 600, 700, 850);
 
       fill(60);
-      rect(width/2, 200, 700, 100);
-
+      rect(width/2,200,700,100);
+    
       fill(255);
       text("Find nedenstående frem!", 950, 220);
       text("Segment:"+segStep, 1800, 40);
@@ -61,9 +63,19 @@ class Opskrift2 extends Opskrift {
       for (int i = 0; i < redskaber.length; i++) {
         text(redskaber[i], 950, 300+(i*50));
       }
+      
+      //fill(40);
+      //rect(200,820,303,403);
+      //image(wash,200,820);
+      
     } else if (segStep == 1) {
       text("Segment:"+segStep, 1800, 40);
-      text("HEY", width/2, 500);
+      noFill();
+      stroke(0);
+      strokeWeight(4);
+      for(float i = 0; i < 6.25; i += 0.25){
+      arc(width/2, height/2, 500, 500, i, i+0.1); 
+        }
     } else if (segStep == 2) {
 
 
