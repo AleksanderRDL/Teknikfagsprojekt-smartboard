@@ -7,7 +7,7 @@ class Opskrift2 extends Opskrift {
   PImage peelcarrot;
   PImage wash;
   PImage pil;
-  PImage egg,egg2;
+  PImage egg, egg2;
   int x;
   int y;
   float x2 = 1060;
@@ -20,8 +20,8 @@ class Opskrift2 extends Opskrift {
     egg = loadImage("Sprites/crackegg.png");
     egg.resize(250, 250);
     egg2 = loadImage("Sprites/egg2.png");
-    egg2.resize(200,300);
-    
+    egg2.resize(200, 300);
+
     font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
@@ -88,7 +88,7 @@ class Opskrift2 extends Opskrift {
       stroke(0);
       strokeWeight(4);
       for (float i = 0; i < 6.25; i += 0.25) {
-        arc(500, height/2, 600, 600, i, i+0.1);
+        arc(500, height/2, 500, 500, i, i+0.1);
       }
       textSize(55);
       text("Skål", 500, height/2);
@@ -102,7 +102,7 @@ class Opskrift2 extends Opskrift {
       } else if (x2 >= 1060) {
         v= -1;
       }
-      image(egg,1025,350);
+      image(egg, 1025, 350);
       image(egg2, 1300, height/2);
       image(egg2, 1430, height/2);
       image(egg2, 1560, height/2);
