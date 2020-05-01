@@ -127,22 +127,36 @@ class Opskrift2 extends Opskrift {
       image(carrot, width/2-50, y);
 
 
-
-
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 4) {
+      // Løg segment (Lucas)
+
+
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 5) {
+      // Halver tomater og hak persille groft
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
+      // Opvarm smør eller kokosolie i en pande
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 7) {
+      // Hæld æggene ud over og lad æggene fæstne sig i bunden. Bare lige 2-3 minutter eller sådan.
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 8) {
+      // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 9) {
+      // Læg låg på og lad omeletten passe sig selv i 10 minutter.
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 10) {
+      // Alarm går, de 10 min er gået, wuuu du er done
+
       text("Segment:"+segStep, 1800, 40);
     }
   }
