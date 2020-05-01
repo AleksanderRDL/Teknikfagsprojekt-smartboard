@@ -3,14 +3,16 @@
 class Opskrift2 extends Opskrift {
   float cooldown = 0;
   PFont font;
-  PImage carrot;
+  PImage handcarrot, Riv, carrot;
   PImage peelcarrot;
-PImage wash;
+  PImage wash;
+  int x;
+  int y;
 
   Opskrift2() {
     wash = loadImage("Sprites/washhands.JPG");
-    wash.resize(300,400);
-    font = createFont("Ink Free",30);
+    wash.resize(300, 400);
+    font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
     ing = new String [] {"5 æg", "1 løg", "1 gulerod", "6 små tomater", "1 håndfuld persille", "smør eller kokosolie", "salt og peber"};
@@ -18,8 +20,12 @@ PImage wash;
     tid = "15 minutter";
     billede = loadImage("Sprites/nemomelet2.jpg");
     billede.resize(564, 350);
-    carrot = loadImage("Sprites/peelcarrot1.png");
-    peelcarrot = loadImage("Sprites/carrotpeeler");
+    handcarrot = loadImage("Sprites/peelcarrot1.png");
+    peelcarrot = loadImage("Sprites/carrotpeeler.png");
+    carrot = loadImage("Sprites/carrot.png");
+    Riv = loadImage("Sprites/Riv.png");
+    x=(width/2-30);
+    y=(width/2-30);
   }
   void segmenter() {
     if (keyPressed && millis() > cooldown+300) {
@@ -47,8 +53,8 @@ PImage wash;
       rect(width/2, 600, 700, 850);
 
       fill(60);
-      rect(width/2,200,700,100);
-    
+      rect(width/2, 200, 700, 100);
+
       fill(255);
       text("Find nedenstående frem!", 950, 220);
       text("Segment:"+segStep, 1800, 40);
@@ -63,34 +69,39 @@ PImage wash;
       for (int i = 0; i < redskaber.length; i++) {
         text(redskaber[i], 950, 300+(i*50));
       }
-      
+
       //fill(40);
       //rect(200,820,303,403);
       //image(wash,200,820);
-      
     } else if (segStep == 1) {
       text("Segment:"+segStep, 1800, 40);
       noFill();
       stroke(0);
       strokeWeight(4);
-      for(float i = 0; i < 6.25; i += 0.25){
-      arc(width/2, height/2, 500, 500, i, i+0.1); 
-        }
+      for (float i = 0; i < 6.25; i += 0.25) {
+        arc(width/2, height/2, 500, 500, i, i+0.1);
+      }
     } else if (segStep == 2) {
-
-
-
-
-
-
-
-
-
-
-
-
+      text("Skræl gulerod", 950, 220);
+      x += 1;
+      if (x>(width/2)+75) {
+        x=(width/2-30);
+      }
+      image(handcarrot, width/2, height/2);
+      image(peelcarrot, x-20, (height/2)-110);
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 3) {
+      text("Riv gulerod", 950, 220);
+      y += 1;
+      if (y>(height/2)+65) {
+        y=(height/2-65);
+      }
+      image(Riv, width/2, height/2);
+      image(carrot, width/2-50, y);
+
+
+
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 4) {
       text("Segment:"+segStep, 1800, 40);
