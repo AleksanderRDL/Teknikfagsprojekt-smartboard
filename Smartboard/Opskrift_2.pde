@@ -7,14 +7,21 @@ class Opskrift2 extends Opskrift {
   PImage peelcarrot;
   PImage wash;
   PImage pil;
+  PImage egg,egg2;
   int x;
   int y;
-  int y2 = 300;
+  float x2 = 1060;
+  float v = 1;
   Opskrift2() {
     wash = loadImage("Sprites/washhands.JPG");
     wash.resize(300, 400);
     pil = loadImage("Sprites/Arrow.png");
     pil.resize(200, 100);
+    egg = loadImage("Sprites/crackegg.png");
+    egg.resize(250, 250);
+    egg2 = loadImage("Sprites/egg2.png");
+    egg2.resize(200,300);
+    
     font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
@@ -50,7 +57,6 @@ class Opskrift2 extends Opskrift {
 
     if (segStep == 0) {
       fill(255);
-      text("FIND INGREDIENSER", width/2, 150);
       text("Segment:"+segStep, 1800, 40);
       stroke(0);
       rect(width/2, 600, 700, 850);
@@ -82,22 +88,26 @@ class Opskrift2 extends Opskrift {
       stroke(0);
       strokeWeight(4);
       for (float i = 0; i < 6.25; i += 0.25) {
-        arc(width/2, 700, 600, 600, i, i+0.1);
+        arc(500, height/2, 600, 600, i, i+0.1);
       }
       textSize(55);
-      text("Placer skålen her", width/2, 700);
-      text("Slå æggene i skålen", 1700, 200);
+      text("Skål", 500, height/2);
+      //    text("Slå æggene i skålen", 1700, 200);
       textSize(32);
       strokeWeight(1);
-      pushMatrix();
-      translate(width/2,y2);
-      rotate(-HALF_PI);
-      image(pil, 0, 0);
-      popMatrix();
-      y2++;
-      if (y2 >= 400) {
-        y2 = 300;
+      image(pil, x2, height/2);
+      x2 += v;
+      if (x2 <= 940) {
+        v *= -1;
+      } else if (x2 >= 1060) {
+        v= -1;
       }
+      image(egg,1025,350);
+      image(egg2, 1300, height/2);
+      image(egg2, 1430, height/2);
+      image(egg2, 1560, height/2);
+      image(egg2, 1690, height/2);
+      image(egg2, 1820, height/2);
     } else if (segStep == 2) {
       text("Skræl gulerod", 950, 220);
       x += 1;
