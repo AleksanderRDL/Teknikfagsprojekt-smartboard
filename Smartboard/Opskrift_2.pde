@@ -147,7 +147,7 @@ class Opskrift2 extends Opskrift {
       text("Skræl løg", 950, 220);
 
       y1+=2;
-      if (y==height/2+60) {
+      if (y1==height/2+60) {
         x1-=2;
         y1-=2;
       }
