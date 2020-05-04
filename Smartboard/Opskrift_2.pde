@@ -153,7 +153,7 @@ class Opskrift2 extends Opskrift {
       }
 
 
-      if (x==width/2-60) {
+      if (x1==width/2-60) {
         x1= width/2;
         y1= height/2-100;
       }
