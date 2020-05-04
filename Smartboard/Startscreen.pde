@@ -18,14 +18,14 @@ class Startscreen {
     noStroke();
     rectMode(CORNER);
     fill(80);
-    rect(0, 10, 2300, 170);  
+    rect(0, 0, 2300, 150);  
     fill(255);
     ellipse(width/2, 550, 350, 350);
 
     textSize(60);
     fill(255);
     textFont(titel);
-    text("START MADLAVNING", width/2, 115);
+    text("START MADLAVNING", width/2, 100);
 
     fill(0);
     textSize(50);

@@ -18,7 +18,7 @@ class Hmenu {
     rect((width/4)*3+140, height/1.8, width/3.4, height/1.3);    // Tredje
 
     fill(60);
-    rect(width/2, 60, width, 120, 15);            // Banner
+    rect(width/2, 60, width, 120);            // Banner
     rect((width/4)-140, 225, width/3.4, 90);   // Første opskrift titelkasse
     rect((width/4)*2, 225, width/3.4, 90);            // Anden opskrift titelkasse
     rect((width/4)*3+140, 225, width/3.4, 90);  // Tredje opskrift titelkasse
