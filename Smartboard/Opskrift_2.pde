@@ -12,11 +12,15 @@ class Opskrift2 extends Opskrift {
   PImage flame;
   //Løg animation 
   PImage kniv, log, logs;
+  // Ild animation
+  PImage[] flammer = new PImage[3];
   int x1, y1;
   int x;
   int y;
   float x2 = 1060;
   float v = 1;
+  int i;
+  float s;
   Opskrift2() {
     wash = loadImage("Sprites/washhands.JPG");
     wash.resize(300, 400);
@@ -27,8 +31,13 @@ class Opskrift2 extends Opskrift {
     egg2 = loadImage("Sprites/egg2.png");
     egg2.resize(200, 300);
     pan = loadImage("Sprites/pande.png");
-    pan.resize(500, 500);
-    flame = loadImage("Sprites/flame.png");
+    pan.resize(800, 500);
+    //   flame = loadImage("Sprites/flame.png");
+    flammer[0] = loadImage("Sprites/flame1.png");
+    flammer[1] = loadImage("Sprites/flame2.png");
+    flammer[2] = loadImage("Sprites/flame3.png");
+    //frameRate(5);
+
     font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
@@ -116,7 +125,7 @@ class Opskrift2 extends Opskrift {
       } else if (x2 >= 1060) {
         v= -1;
       }
-      image(egg, 1025, 350);
+      image(egg, 1010, 350);
       image(egg2, 1300, height/2);
       image(egg2, 1430, height/2);
       image(egg2, 1560, height/2);
@@ -159,7 +168,7 @@ class Opskrift2 extends Opskrift {
       }
       image(log, width/2, height/2);
       image(kniv, width/2, y1);
-      image(logs, x1-45, height/2);
+      image(logs, x1-45, 552);
 
 
 
@@ -172,9 +181,18 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Opvarm smør eller kokosolie i en pande
-      text("ShAkE", width/2, height/2);
-      image(flame, width/2, 800);
-      image(pan, width/2, height/2);
+   //   text("ShAkE", width/2, height/2);
+      image(flammer[i], width/2, 750);
+      s += 0.1;
+      if (s > 1) {
+        i++;
+        s = 0;
+      }
+
+      if (i > 2) {
+        i = 0;
+      }
+         image(pan, 1050, height/2);
 
 
       text("Segment:"+segStep, 1800, 40);
