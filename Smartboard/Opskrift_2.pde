@@ -10,6 +10,9 @@ class Opskrift2 extends Opskrift {
   PImage egg, egg2;
   PImage pan;
   PImage flame;
+  //Løg animation 
+  PImage kniv, log, logs;
+  int x1, y1;
   int x;
   int y;
   float x2 = 1060;
@@ -38,6 +41,13 @@ class Opskrift2 extends Opskrift {
     peelcarrot = loadImage("Sprites/carrotpeeler.png");
     carrot = loadImage("Sprites/carrot.png");
     Riv = loadImage("Sprites/Riv.png");
+    //Løg animation 
+    kniv= loadImage("Sprites/kniv1.png");
+    log = loadImage("Sprites/onion.png");
+    logs= loadImage("Sprites/logSkrald.png");
+    x1= width/2;
+    y1= height/2-100;
+
     x=(width/2-30);
     y=(width/2-30);
   }
@@ -134,6 +144,22 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 4) {
       // Løg segment (Lucas)
+      text("Skræl løg", 950, 220);
+
+      y1+=2;
+      if (y==height/2+60) {
+        x1-=2;
+        y1-=2;
+      }
+
+
+      if (x==width/2-60) {
+        x1= width/2;
+        y1= height/2-100;
+      }
+      image(log, width/2, height/2);
+      image(kniv, width/2, y1);
+      image(logs, x1-45, height/2);
 
 
 
