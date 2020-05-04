@@ -181,7 +181,7 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Opvarm smør eller kokosolie i en pande
-   //   text("ShAkE", width/2, height/2);
+      text("Opvarm smøren i en pande", width/2, 300);
       image(flammer[i], width/2, 750);
       s += 0.1;
       if (s > 1) {
