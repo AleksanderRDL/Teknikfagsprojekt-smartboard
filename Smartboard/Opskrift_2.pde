@@ -8,6 +8,8 @@ class Opskrift2 extends Opskrift {
   PImage wash;
   PImage pil;
   PImage egg, egg2;
+  PImage pan;
+  PImage flame;
   int x;
   int y;
   float x2 = 1060;
@@ -21,7 +23,9 @@ class Opskrift2 extends Opskrift {
     egg.resize(250, 250);
     egg2 = loadImage("Sprites/egg2.png");
     egg2.resize(200, 300);
-
+    pan = loadImage("Sprites/pande.png");
+    pan.resize(500, 500);
+    flame = loadImage("Sprites/flame.png");
     font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
     redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
@@ -137,25 +141,36 @@ class Opskrift2 extends Opskrift {
     } else if (segStep == 5) {
       // Halver tomater og hak persille groft
 
+
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Opvarm smør eller kokosolie i en pande
+      text("ShAkE", width/2, height/2);
+      image(flame, width/2, 800);
+      image(pan, width/2, height/2);
+
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 7) {
       // Hæld æggene ud over og lad æggene fæstne sig i bunden. Bare lige 2-3 minutter eller sådan.
 
+
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 8) {
       // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
+
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 9) {
       // Læg låg på og lad omeletten passe sig selv i 10 minutter.
 
+
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 10) {
       // Alarm går, de 10 min er gået, wuuu du er done
+
 
       text("Segment:"+segStep, 1800, 40);
     }
