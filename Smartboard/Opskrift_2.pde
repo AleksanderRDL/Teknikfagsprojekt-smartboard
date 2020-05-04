@@ -65,8 +65,8 @@ class Opskrift2 extends Opskrift {
       if (key == CODED) {
         if (keyCode == RIGHT) {
           segStep++;
-          if (segStep > 10) {
-            segStep = 10;
+          if (segStep > 12) {
+            segStep = 12;
           }
         } else if (keyCode == LEFT) {
           segStep--;
@@ -174,13 +174,26 @@ class Opskrift2 extends Opskrift {
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 5) {
-      // Halver tomater og hak persille groft
+      // Skær løg
 
 
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
+      // Halver tomater
+
+
+
+      text("Segment:"+segStep, 1800, 40);
+    } else if (segStep == 7) {
+      // Hak persille groft
+
+
+
+      text("Segment:"+segStep, 1800, 40);
+    }  else if (segStep == 8) {
       // Opvarm smør eller kokosolie i en pande
+      // Aleksander
       text("Opvarm smøren i en pande", width/2, 300);
       image(flammer[i], width/2, 750);
       s += 0.1;
@@ -192,27 +205,27 @@ class Opskrift2 extends Opskrift {
       if (i > 2) {
         i = 0;
       }
-         image(pan, 1050, height/2);
-
-
-      text("Segment:"+segStep, 1800, 40);
-    } else if (segStep == 7) {
-      // Hæld æggene ud over og lad æggene fæstne sig i bunden. Bare lige 2-3 minutter eller sådan.
-
-
-
-      text("Segment:"+segStep, 1800, 40);
-    } else if (segStep == 8) {
-      // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
+      image(pan, 1050, height/2);
 
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 9) {
-      // Læg låg på og lad omeletten passe sig selv i 10 minutter.
+      // Hæld æggene ud over og lad æggene fæstne sig i bunden. Bare lige 2-3 minutter eller sådan.
+      // Aleksander
 
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 10) {
+      // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
+      // Aleksander
+
+      text("Segment:"+segStep, 1800, 40);
+    } else if (segStep == 11) {
+      // Læg låg på og lad omeletten passe sig selv i 10 minutter.
+
+
+      text("Segment:"+segStep, 1800, 40);
+    } else if (segStep == 12) {
       // Alarm går, de 10 min er gået, wuuu du er done
 
 
