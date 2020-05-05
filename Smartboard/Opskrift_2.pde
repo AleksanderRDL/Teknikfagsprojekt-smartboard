@@ -9,6 +9,7 @@ class Opskrift2 extends Opskrift {
   PImage pil;
   PImage egg, egg2;
   PImage pan;
+  PImage butter;
   PImage flame;
   //Løg animation 
   PImage kniv, log, logs;
@@ -20,7 +21,7 @@ class Opskrift2 extends Opskrift {
   float x2 = 1060;
   float v = 1;
   int i;
-  float s;
+  float s,r;
   Opskrift2() {
     wash = loadImage("Sprites/washhands.JPG");
     wash.resize(300, 400);
@@ -31,7 +32,9 @@ class Opskrift2 extends Opskrift {
     egg2 = loadImage("Sprites/egg2.png");
     egg2.resize(200, 300);
     pan = loadImage("Sprites/pande.png");
-    pan.resize(800, 500);
+    pan.resize(600, 450);
+    butter = loadImage("Sprites/butter.png");
+    butter.resize(100,75);
     //   flame = loadImage("Sprites/flame.png");
     flammer[0] = loadImage("Sprites/flame1.png");
     flammer[1] = loadImage("Sprites/flame2.png");
@@ -202,7 +205,7 @@ class Opskrift2 extends Opskrift {
     }  else if (segStep == 8) {
       // Opvarm smør eller kokosolie i en pande
       // Aleksander
-      text("Opvarm smøren i en pande", width/2, 300);
+      text("Opvarm smøren i en pande", width/2, 200);
       image(flammer[i], width/2, 750);
       s += 0.1;
       if (s > 1) {
@@ -213,8 +216,14 @@ class Opskrift2 extends Opskrift {
       if (i > 2) {
         i = 0;
       }
-      image(pan, 1050, height/2);
+      image(pan, 975, height/2-50);
+      r += 0.05;
+      pushMatrix();
+      translate(975,height/2);
+      rotate(r);
+      image(butter,50,0);
 
+popMatrix();
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 9) {
