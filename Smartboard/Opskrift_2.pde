@@ -194,9 +194,14 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Halver tomater
-
-
-
+ for (float i = 0; i < 6.25; i += 0.25) {
+        arc(width/2, height/2, 500, 500, i, i+0.1);
+      }
+    for (int i = height/2-250; i < height/2+250; i = i+50) {
+    for (int j = width/2; j < width/2+25; j = j+60) {
+      line(j, i+35,j,i);
+    }
+  }
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 7) {
       // Hak persille groft
