@@ -25,15 +25,16 @@ String val;
 String hojre;
 String venstre;
 String [] mol;
+float cooldown = 0;
 
 void setup() {
   fullScreen();
   font = createFont("Ink Free", 35);
   titel = createFont("Ink Free", 65);
-  //val=("199 200");
+ // val=("199 200");
 
-  // String portName = Serial.list()[0];
-  // myPort = new Serial(this, portName, 115200);
+   String portName = Serial.list()[2];
+   myPort = new Serial(this, portName, 115200);
   ops.add(new Opskrift1());
   ops.add(new Opskrift2());
   ops.add(new Opskrift3());
@@ -49,12 +50,27 @@ void setup() {
 void draw() {
   //Arduino code
   // Arduino
-  /* if (myPort.available()>0) {
+   if (myPort.available()>0) {
    val=myPort.readStringUntil('\n');
-   } */
-  /*mol = splitTokens(val);
+   } 
+  mol = splitTokens(val);
    hojre = mol[1];
-   venstre = mol[0];*/
+   venstre = mol[0];
+   println(int(hojre));
+   println(int(venstre));
+   if (int(hojre) < 50 && state == 2 && millis() > cooldown+750){
+     segStep++;
+     cooldown = millis();
+     if(segStep > 12){
+      segStep = 12; 
+     }
+   } else if (int(venstre) < 50 && state == 2 && millis() > cooldown+750){
+     segStep--;
+     cooldown = millis();
+     if(segStep < 0){
+      segStep = 0; 
+     }
+   }
   if (state == 0) {  // Startskærm
     background(195);
     s.display();
