@@ -22,6 +22,12 @@ class Opskrift2 extends Opskrift {
   float v = 1;
   int i;
   float s, r;
+  String time = "10";
+  float mil;
+  int t;
+  int interval;
+  float w;
+
   Opskrift2() {
     wash = loadImage("Sprites/washhands.JPG");
     wash.resize(300, 400);
@@ -68,11 +74,18 @@ class Opskrift2 extends Opskrift {
       if (key == CODED) {
         if (keyCode == RIGHT) {
           segStep++;
+          if (segStep == 9) {
+            x2 = 930;
+            mil = millis();
+          }
           if (segStep > 12) {
             segStep = 12;
           }
         } else if (keyCode == LEFT) {
           segStep--;
+          if (segStep == 9) {
+            mil = millis();
+          }
           if (segStep < 0) {
             segStep = 0;
           }
@@ -119,7 +132,7 @@ class Opskrift2 extends Opskrift {
       textSize(55);
       text("Skål", 500, height/2);
       //    text("Slå æggene i skålen", 1700, 200);
-      
+
       strokeWeight(1);
       image(pil, x2, height/2);
       x2 += v;
@@ -134,7 +147,7 @@ class Opskrift2 extends Opskrift {
       image(egg2, 1560, height/2);
       image(egg2, 1690, height/2);
       image(egg2, 1820, height/2);
-      text("Pisk æggene",500,225);
+      text("Pisk æggene", 500, 225);
       textSize(32);
     } else if (segStep == 2) {
       text("Skræl gulerod", 950, 220);
@@ -194,14 +207,14 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Halver tomater
- for (float i = 0; i < 6.25; i += 0.25) {
+      for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 500, 500, i, i+0.1);
       }
-    for (int i = height/2-250; i < height/2+250; i = i+50) {
-    for (int j = width/2; j < width/2+25; j = j+60) {
-      line(j, i+35,j,i);
-    }
-  }
+      for (int i = height/2-250; i < height/2+250; i = i+50) {
+        for (int j = width/2; j < width/2+25; j = j+60) {
+          line(j, i+35, j, i);
+        }
+      }
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 7) {
       // Hak persille groft
@@ -235,8 +248,48 @@ class Opskrift2 extends Opskrift {
     } else if (segStep == 9) {
       // Hæld æggene ud over og lad æggene fæstne sig i bunden. Bare lige 2-3 minutter eller sådan.
       // Aleksander
-image(pan, 975, height/2-50);
+      image(flammer[i], 490, 750);
+      s += 0.1;
+      if (s > 1) {
+        i++;
+        s = 0;
+      }
 
+      if (i > 2) {
+        i = 0;
+      }
+      image(pan, 500, height/2-50);
+      for (float i = 0; i < 6.25; i += 0.25) {
+        arc(1400, height/2, 500, 500, i, i+0.1);
+      }
+      textSize(25);
+      text("Hæld æggene ud på panden med smør", 950, 615);
+      textSize(50);
+      text("Æggeskål", 1400, 550);
+      image(pil, x2, height/2);
+      x2 += v;
+      if (x2 <= 900) {
+        v *= -1;
+      } else if (x2 >= 980) {
+        v= -1;
+      }
+      interval = 180;
+
+      t = interval-int((millis()-mil)/1000);
+      time = nf(t, 3);
+      textSize(35);
+      text(time, 975, 255);
+      w = map(t, 180, 0, -HALF_PI, PI+HALF_PI);
+      strokeWeight(48);
+      stroke(#0EC941);
+      arc(975, 250, 150, 150, -HALF_PI, w);
+      stroke(0);
+      strokeWeight(5);
+      ellipse(975, 250, 200, 200);
+      strokeWeight(2);
+      textSize(50);
+      text("Lad æggene fæstne sig på panden i 3 min", 975, 120);
+      textSize(25);
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 10) {
       // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
