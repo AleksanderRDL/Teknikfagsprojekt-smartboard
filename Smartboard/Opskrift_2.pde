@@ -178,8 +178,6 @@ class Opskrift2 extends Opskrift {
         x1-=2;
         y1-=2;
       }
-
-
       if (x1==width/2-60) {
         x1= width/2;
         y1= height/2-100;
@@ -294,6 +292,7 @@ class Opskrift2 extends Opskrift {
     } else if (segStep == 10) {
       // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
       // Aleksander
+
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 11) {
