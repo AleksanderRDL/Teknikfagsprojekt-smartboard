@@ -191,6 +191,7 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 5) {
       // Skær løg
+      text("skær løg", 950, 220);
       for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 500, 500, i, i+0.1);
       }
@@ -205,6 +206,7 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Halver tomater
+      text("Halver tomater", 950, 220);
       for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 500, 500, i, i+0.1);
       }
@@ -216,9 +218,16 @@ class Opskrift2 extends Opskrift {
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 7) {
       // Hak persille groft
+      text("Hak persille", 950, 220);
+  for (float i = 0; i < 6.25; i += 0.25) {
+        arc(width/2, height/2, 800, 300, i, i+0.1);
+      }
+      for (int i = height/2-150; i < height/2+150; i = i+50) {
+        for (int j = width/2-400; j < width/2+410; j = j+60) {
+          line(j, i+35, j, i);
+        }
 
-
-
+      }
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 8) {
       // Opvarm smør eller kokosolie i en pande
