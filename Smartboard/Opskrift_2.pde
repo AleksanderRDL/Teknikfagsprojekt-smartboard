@@ -8,7 +8,7 @@ class Opskrift2 extends Opskrift {
   PImage wash;
   PImage pil;
   PImage egg, egg2;
-  PImage pan;
+  PImage pan, pan2, lid;
   PImage butter;
   PImage flame;
   //Løg animation 
@@ -39,13 +39,15 @@ class Opskrift2 extends Opskrift {
     egg2.resize(200, 300);
     pan = loadImage("Sprites/pande.png");
     pan.resize(600, 450);
+    pan2 = loadImage("Sprites/pande2.png");
+    pan2.resize(600, 450);
+    lid = loadImage("Sprites/log.png");
+    lid.resize(710, 440);
     butter = loadImage("Sprites/butter.png");
     butter.resize(100, 75);
-    //   flame = loadImage("Sprites/flame.png");
     flammer[0] = loadImage("Sprites/flame1.png");
     flammer[1] = loadImage("Sprites/flame2.png");
     flammer[2] = loadImage("Sprites/flame3.png");
-    //frameRate(5);
 
     font = createFont("Ink Free", 30);
     titel = "Omelet m. grøntsager";
@@ -76,6 +78,10 @@ class Opskrift2 extends Opskrift {
           segStep++;
           if (segStep == 9) {
             x2 = 930;
+            mil = millis();
+          } else if (segStep == 10) {
+            x2 = 1200;
+          } else if (segStep == 11) {
             mil = millis();
           }
           if (segStep > 12) {
@@ -117,10 +123,6 @@ class Opskrift2 extends Opskrift {
       for (int i = 0; i < redskaber.length; i++) {
         text(redskaber[i], 950, 300+(i*50));
       }
-
-      //fill(40);
-      //rect(200,820,303,403);
-      //image(wash,200,820);
     } else if (segStep == 1) {
       text("Segment:"+segStep, 1800, 40);
       noFill();
@@ -186,12 +188,10 @@ class Opskrift2 extends Opskrift {
       image(kniv, width/2, y1);
       image(logs, x1-45, 552);
 
-
-
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 5) {
       // Skær løg
-      text("skær løg", 950, 220);
+      text("Skær løg", 950, 220);
       for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 500, 500, i, i+0.1);
       }
@@ -200,8 +200,6 @@ class Opskrift2 extends Opskrift {
           line(j, i+35, j, i);
         }
       }
-
-
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
@@ -219,14 +217,13 @@ class Opskrift2 extends Opskrift {
     } else if (segStep == 7) {
       // Hak persille groft
       text("Hak persille", 950, 220);
-  for (float i = 0; i < 6.25; i += 0.25) {
+      for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 800, 300, i, i+0.1);
       }
       for (int i = height/2-150; i < height/2+150; i = i+50) {
         for (int j = width/2-400; j < width/2+410; j = j+60) {
           line(j, i+35, j, i);
         }
-
       }
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 8) {
@@ -301,21 +298,83 @@ class Opskrift2 extends Opskrift {
     } else if (segStep == 10) {
       // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
       // Aleksander
+      flammer[0].resize(80, 100);
+      flammer[1].resize(80, 100);
+      flammer[2].resize(80, 100);
 
+      image(flammer[i], 490, 735);
+      text("Skru langt ned for varmen", 490, 820);
+      s += 0.1;
+      if (s > 1) {
+        i++;
+        s = 0;
+      }
+
+      if (i > 2) {
+        i = 0;
+      }
+      image(pan2, 500, height/2-50);
+      rect(1500, 550, 300, 300, 20);
+      textSize(50);
+      text("Gulerod", 1500, 480);
+      text("Løg", 1500, 540);
+      text("Tomater", 1500, 600);
+      text("Persille", 1500, 660);
+      textSize(50);
+      text("Fordel de hakkede grøntsager ovenpå æggene", width/2, 150);
+      textSize(32);
+      image(pil, x2, height/2);
+      x2 += v;
+      if (x2 <= 900) {
+        v *= -1;
+      } else if (x2 >= 1200) {
+        v = -1;
+      }
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 11) {
       // Læg låg på og lad omeletten passe sig selv i 10 minutter.
+      image(flammer[i], width/2-10, 735);
+      s += 0.1;
+      if (s > 1) {
+        i++;
+        s = 0;
+      }
 
+      if (i > 2) {
+        i = 0;
+      }
+      image(pan2, width/2, height/2-50);
+      image(lid, width/2-15, height/2-15);
+      textSize(50);
+      text("Læg låg på og lad den passe sig selv 10 min", width/2, 150);
+      textSize(30);
+      interval = 10;
+
+      t = interval-int((millis()-mil)/1000);
+      time = nf(t, 3);
+      textSize(35);
+      text(time, 1650, 255);
+      w = map(t, 600, 0, -HALF_PI, PI+HALF_PI);
+      strokeWeight(48);
+      stroke(#0EC941);
+      arc(1650, 250, 150, 150, -HALF_PI, w);
+      stroke(0);
+      strokeWeight(3);
+      ellipse(1650, 250, 200, 200);
+      strokeWeight(2);
+
+      if (t <= 0) {
+        segStep++;
+      }
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 12) {
       // Alarm går, de 10 min er gået, wuuu du er done
-
-
+      textSize(100);
+      text("MADEN ER FÆRDIG", width/2, height/2);
+      textSize(30);
       text("Segment:"+segStep, 1800, 40);
     }
   }
 }
-
-//int r = int(random(0,2));

@@ -10,19 +10,6 @@ class Opskrift {
   String diff;
   String tid;
 
-  Opskrift(/*String tempTitel, String tempBillede, String[] tempIngredienser, String[] tempRedskaber, int tempDifficulty, int tempTidsbrug*/) {
-/*    titel = tempTitel;
-    ingredienser = tempIngredienser;
-    redskaber = tempRedskaber;
-    difficulty = tempDifficulty;
-    tidsbrug = tempTidsbrug;
-    billede = loadImage(tempBillede);
-    */
+  Opskrift() {
   }
-  
-//  String getTitel(){
-    
-//    return titel;
-//  }
-  
 }

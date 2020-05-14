@@ -1,9 +1,6 @@
 // Salat m. kylling
 
 class Opskrift5 extends Opskrift {
-
-
-
   Opskrift5() {
     titel = "Salat m. kylling";
     tid = "20 minutter";

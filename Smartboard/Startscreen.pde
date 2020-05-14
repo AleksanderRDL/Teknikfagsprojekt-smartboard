@@ -5,7 +5,6 @@ class Startscreen {
   // Dette er området over setup hvor man kan lave de globale variabler der gælder for alle funktionerne under
 
 
-
   Startscreen() {
     // Det her fungerer som setup den køres 1 gang
     textMode(CENTER);

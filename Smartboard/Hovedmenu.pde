@@ -40,10 +40,6 @@ class Hmenu {
     image(ops.get(n+1).billede, (width/4)*2, 445);
     image(ops.get(n+2).billede, (width/4)*3+140, 445);
 
-
-
-
-
     fill(0);
     textSize(32);
     textAlign(LEFT);
@@ -228,9 +224,7 @@ class Hmenu {
       state = 2;
     } else if (dist(mouseX, 0, (width/4)-140, 0) < (width/9)/2 && dist(0, mouseY, 0, 940) < 75/2 && n == 1 && mousePressed) { // Første
       state = 2;
-    }/*else if (dist(mouseX, 0, (width/4)*3+140, 0) < (width/9)/2 && dist(0, mouseY, 0, 940) < 75/2 && n == 0) { // Tredje
-     state = 2;
-     } */
+    }
   }  
 
   boolean checkHover(float x, float y, float r) {

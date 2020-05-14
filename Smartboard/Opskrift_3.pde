@@ -1,9 +1,6 @@
 // Omelet
 
 class Opskrift3 extends Opskrift {
-
-
-
   Opskrift3() {
     titel = "Hurtig lasagne";
     tid = "60 minutter";

@@ -1,9 +1,6 @@
 // Pasta & kødsovs
 
 class Opskrift4 extends Opskrift {
-
-
-
   Opskrift4() {
     titel = "Pasta & kødsovs";
     tid = "45 minutter";
