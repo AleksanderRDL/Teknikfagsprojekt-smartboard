@@ -37,8 +37,8 @@ void setup() {
   font = createFont("Ink Free", 35);
   titel = createFont("Ink Free", 65);
 
-  //  String portName = Serial.list()[2];
-  //   myPort = new Serial(this, portName, 115200);
+  String portName = Serial.list()[2];
+  myPort = new Serial(this, portName, 115200);
   ops.add(new Opskrift1());
   ops.add(new Opskrift2());
   ops.add(new Opskrift3());
@@ -52,34 +52,34 @@ void setup() {
 
 void draw() {
   //Arduino code
-  /*  if (myPort.available()>0) {
-   val=myPort.readStringUntil('\n');
-   } 
-   mol = splitTokens(val);
-   hojre = mol[1];
-   venstre = mol[0]; 
-   if (int(hojre) < 50 && state == 2 && millis() > cool+750){
-   segStep++;
-   cooldown = millis();
-   if (segStep == 9) {
-   x2 = 930;
-   mil = millis();
-   } else if (segStep == 10) {
-   x2 = 1200;
-   } else if (segStep == 11) {
-   mil = millis();
-   }
-   if(segStep > 12){
-   segStep = 12; 
-   }
-   } else if (int(venstre) < 50 && state == 2 && millis() > cool+750){
-   segStep--;
-   cooldown = millis();
-   if(segStep < 0){
-   segStep = 0; 
-   }
-   }
-   */
+  if (myPort.available()>0) {
+    val=myPort.readStringUntil('\n');
+  } 
+  mol = splitTokens(val);
+  hojre = mol[1];
+  venstre = mol[0]; 
+  if (int(hojre) < 50 && state == 2 && millis() > cool+750) {
+    segStep++;
+    cool = millis();
+    if (segStep == 9) {
+      o2.x2 = 930;
+      o2.mil = millis();
+    } else if (segStep == 10) {
+      o2.x2 = 1200;
+    } else if (segStep == 11) {
+      o2.mil = millis();
+    }
+    if (segStep > 12) {
+      segStep = 12;
+    }
+  } else if (int(venstre) < 50 && state == 2 && millis() > cool+750) {
+    segStep--;
+    cool = millis();
+    if (segStep < 0) {
+      segStep = 0;
+    }
+  }
+
   if (state == 0) {  // Startskærm
     background(195);
     s.display();
