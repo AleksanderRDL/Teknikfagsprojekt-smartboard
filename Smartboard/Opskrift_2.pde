@@ -350,7 +350,7 @@ class Opskrift2 extends Opskrift {
       textSize(50);
       text("Læg låg på og lad den passe sig selv 10 min", width/2, 150);
       textSize(30);
-      interval = 10;
+      interval = 600;
 
       t = interval-int((millis()-mil)/1000);
       time = nf(t, 3);
