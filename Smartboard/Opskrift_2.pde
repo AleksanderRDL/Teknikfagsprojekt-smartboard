@@ -1,6 +1,7 @@
 // Omelet
 
 class Opskrift2 extends Opskrift {
+  // Alle variablerne brugt til opskriften, står lidt rodet
   float cooldown = 0;
   PFont font;
   PImage handcarrot, Riv, carrot;
@@ -29,6 +30,7 @@ class Opskrift2 extends Opskrift {
   float w;
 
   Opskrift2() {
+    // Billerne loades ind og tilpasses størrelse
     wash = loadImage("Sprites/washhands.JPG");
     wash.resize(300, 400);
     pil = loadImage("Sprites/Arrow.png");
@@ -48,30 +50,32 @@ class Opskrift2 extends Opskrift {
     flammer[0] = loadImage("Sprites/flame1.png");
     flammer[1] = loadImage("Sprites/flame2.png");
     flammer[2] = loadImage("Sprites/flame3.png");
-
-    font = createFont("Ink Free", 30);
-    titel = "Omelet m. grøntsager";
-    redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
-    ing = new String [] {"5 æg", "1 løg", "1 gulerod", "6 små tomater", "1 håndfuld persille", "smør eller kokosolie", "salt og peber"};
-    diff = "Nem"; 
-    tid = "15 minutter";
     billede = loadImage("Sprites/nemomelet2.jpg");
     billede.resize(564, 350);
     handcarrot = loadImage("Sprites/peelcarrot1.png");
     peelcarrot = loadImage("Sprites/carrotpeeler.png");
     carrot = loadImage("Sprites/carrot.png");
     Riv = loadImage("Sprites/Riv.png");
-    //Løg animation 
     kniv= loadImage("Sprites/kniv1.png");
     log = loadImage("Sprites/onion.png");
     logs= loadImage("Sprites/logSkrald.png");
+
+    // Opskriftens egenskaber
+    font = createFont("Ink Free", 30);
+    titel = "Omelet m. grøntsager";
+    redskaber = new String [] {"pande", "paletkniv", "skærebræt", "skarp kniv", "piskeris", "teske", "rivejern"};
+    ing = new String [] {"5 æg", "1 løg", "1 gulerod", "6 små tomater", "1 håndfuld persille", "smør eller kokosolie", "salt og peber"};
+    diff = "Nem"; 
+    tid = "15 minutter";
+
+    // Variabler brugt til animaion
     x1= width/2;
     y1= height/2-100;
-
     x=(width/2-30);
     y=(width/2-30);
   }
   void segmenter() {
+    // Kode for skifte segmentrin med piletasterne
     if (keyPressed && millis() > cooldown+300) {
       if (key == CODED) {
         if (keyCode == RIGHT) {
@@ -101,6 +105,7 @@ class Opskrift2 extends Opskrift {
     }
 
     if (segStep == 0) {
+      // Kode til første segment
       fill(255);
       text("Segment:"+segStep, 1800, 40);
       stroke(0);
@@ -124,6 +129,7 @@ class Opskrift2 extends Opskrift {
         text(redskaber[i], 950, 300+(i*50));
       }
     } else if (segStep == 1) {
+      // kode til segment 1
       text("Segment:"+segStep, 1800, 40);
       noFill();
       stroke(0);
@@ -133,8 +139,6 @@ class Opskrift2 extends Opskrift {
       }
       textSize(55);
       text("Skål", 500, height/2);
-      //    text("Slå æggene i skålen", 1700, 200);
-
       strokeWeight(1);
       image(pil, x2, height/2);
       x2 += v;
@@ -152,6 +156,7 @@ class Opskrift2 extends Opskrift {
       text("Pisk æggene", 500, 225);
       textSize(32);
     } else if (segStep == 2) {
+      // Kode til segment 2
       text("Skræl gulerod", 950, 220);
       x += 1;
       if (x>(width/2)+75) {
@@ -172,7 +177,7 @@ class Opskrift2 extends Opskrift {
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 4) {
-      // Løg segment (Lucas)
+      // Kode til segment 4
       text("Skræl løg", 950, 220);
 
       y1+=2;
@@ -190,7 +195,7 @@ class Opskrift2 extends Opskrift {
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 5) {
-      // Skær løg
+      // Kode til segment 5
       text("Skær løg", 950, 220);
       for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 500, 500, i, i+0.1);
@@ -200,7 +205,6 @@ class Opskrift2 extends Opskrift {
           line(j, i+35, j, i);
         }
       }
-
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 6) {
       // Halver tomater
@@ -215,7 +219,7 @@ class Opskrift2 extends Opskrift {
       }
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 7) {
-      // Hak persille groft
+      // Kode til segment 7
       text("Hak persille", 950, 220);
       for (float i = 0; i < 6.25; i += 0.25) {
         arc(width/2, height/2, 800, 300, i, i+0.1);
@@ -227,8 +231,7 @@ class Opskrift2 extends Opskrift {
       }
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 8) {
-      // Opvarm smør eller kokosolie i en pande
-      // Aleksander
+      // Kode til segment 8
       text("Opvarm smøren i en pande", width/2, 200);
       image(flammer[i], width/2, 750);
       s += 0.1;
@@ -250,8 +253,7 @@ class Opskrift2 extends Opskrift {
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 9) {
-      // Hæld æggene ud over og lad æggene fæstne sig i bunden. Bare lige 2-3 minutter eller sådan.
-      // Aleksander
+      // Kode til segment 9
       image(flammer[i], 490, 750);
       s += 0.1;
       if (s > 1) {
@@ -296,8 +298,7 @@ class Opskrift2 extends Opskrift {
       textSize(25);
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 10) {
-      // Skru langt ned for varmen og fordel alle grøntsagerne ovenpå æggene. Drys med salt og peber
-      // Aleksander
+      // Kode til segment 10
       flammer[0].resize(80, 100);
       flammer[1].resize(80, 100);
       flammer[2].resize(80, 100);
@@ -333,7 +334,7 @@ class Opskrift2 extends Opskrift {
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 11) {
-      // Læg låg på og lad omeletten passe sig selv i 10 minutter.
+      // Kode til segment 11
       image(flammer[i], width/2-10, 735);
       s += 0.1;
       if (s > 1) {
@@ -370,7 +371,7 @@ class Opskrift2 extends Opskrift {
 
       text("Segment:"+segStep, 1800, 40);
     } else if (segStep == 12) {
-      // Alarm går, de 10 min er gået, wuuu du er done
+      // Kode til segment 12 (afslutning)
       textSize(100);
       text("MADEN ER FÆRDIG", width/2, height/2);
       textSize(30);

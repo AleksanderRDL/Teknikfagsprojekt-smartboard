@@ -1,19 +1,12 @@
 // Startskærmen
-// En klasse fungerer lidt som en indelukket setup og draw funktion, altså et normalt program men i en kapsel
-
 class Startscreen {
-  // Dette er området over setup hvor man kan lave de globale variabler der gælder for alle funktionerne under
-
-
   Startscreen() {
-    // Det her fungerer som setup den køres 1 gang
     textMode(CENTER);
     textAlign(CENTER);
     ellipseMode(CENTER);
   }
-  // Her skrives alle funktionerne
-
   void display() {
+    // Layout af startskærmen
     noStroke();
     rectMode(CORNER);
     fill(80);
@@ -31,6 +24,7 @@ class Startscreen {
     text("TRYK HER", width/2, 560);
   }
   void update() {
+    // Bliver der trykket på knappen?
     if (dist(mouseX, mouseY, width/2, 550) < 350/2  && mousePressed) {
       state = 1;
     }

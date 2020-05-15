@@ -11,16 +11,21 @@
 
 import processing.serial.*;
 
+// Opsætning af objekter
 ArrayList<Opskrift> ops = new ArrayList<Opskrift>();
-int state = 0;
 Startscreen s;
 Hmenu hm;
 Opskrift2 o2;
+Serial myPort;
+
+// Generelle variabler
+int state = 0;
 int segStep = 0;
 PFont font;
 PFont titel;
 
-Serial myPort;
+// Variabler til arduino
+
 String val;
 String hojre;
 String venstre;
@@ -31,7 +36,6 @@ void setup() {
   fullScreen();
   font = createFont("Ink Free", 35);
   titel = createFont("Ink Free", 65);
-  // val=("199 200");
 
   //  String portName = Serial.list()[2];
   //   myPort = new Serial(this, portName, 115200);
@@ -44,7 +48,6 @@ void setup() {
 
   s = new Startscreen();
   hm = new Hmenu();
-  println(ops.get(0).titel);
 }
 
 void draw() {
@@ -58,6 +61,14 @@ void draw() {
    if (int(hojre) < 50 && state == 2 && millis() > cool+750){
    segStep++;
    cooldown = millis();
+   if (segStep == 9) {
+   x2 = 930;
+   mil = millis();
+   } else if (segStep == 10) {
+   x2 = 1200;
+   } else if (segStep == 11) {
+   mil = millis();
+   }
    if(segStep > 12){
    segStep = 12; 
    }
@@ -75,8 +86,7 @@ void draw() {
     s.update();
   } else if (state == 1) { // Hovedmenu
     background(195);
-    hm.display();  
-    //   println("Check");
+    hm.display();
   } else if (state == 2) {   // Opskrifter
     background(#E0903F);
     o2.segmenter();
